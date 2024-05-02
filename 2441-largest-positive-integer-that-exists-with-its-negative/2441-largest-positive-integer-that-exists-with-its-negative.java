@@ -1,18 +1,14 @@
 class Solution {
     public int findMaxK(int[] nums) {
-        Arrays.sort(nums);
-        int left = 0;
-        int right = nums.length-1;
-        
-        while(left < right && nums[left] < 0){
-            if(Math.abs(nums[left]) == nums[right]){
-                return nums[right];
-            }else if(Math.abs(nums[left]) < nums[right]){
-                right--;
-            }else{
-                left++;
+        HashSet<Integer> hs = new HashSet<>();
+        int ans = -1;
+        for(int num : nums){
+            hs.add(num);
+            int k = num*(-1);
+            if(hs.contains(k)){
+                ans = Math.max(ans,Math.abs(num));
             }
         }
-        return -1;
+        return ans;
     }
 }
