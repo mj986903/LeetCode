@@ -10,9 +10,6 @@
  */
 class Solution {
     private static ListNode reverse(ListNode head){
-        if(head == null){
-            return head;
-        }
         ListNode prev = null;
         ListNode curr = head;
         while(curr != null){
@@ -36,7 +33,6 @@ class Solution {
                 continue;
             }
             max = Math.max(max,temp.val);
-            System.out.println(max);
             prev = temp;
             temp = temp.next;
         }
