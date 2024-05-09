@@ -6,10 +6,7 @@ class Solution {
         int last = happiness.length - 1;
         
         for(int i=0;i<k;i++){
-            int temp = happiness[last]-count;
-            if(temp > 0){
-                ans = ans + temp;
-            }
+            ans = ans + Math.max(0,happiness[last]-count);
             count++;
             last--;
         }
