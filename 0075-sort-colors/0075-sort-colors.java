@@ -4,13 +4,16 @@ class Solution {
         for(int i=0;i<nums.length;i++){
             count[nums[i]]++;
         }
-        int idx = 0;
+        for(int i=1;i<count.length;i++){
+            count[i] = count[i] + count[i-1];
+        }
+        int sortNums [] = new int[nums.length];
+        for(int i=nums.length-1;i>=0;i--){
+            sortNums[count[nums[i]]-1] = nums[i];
+            count[nums[i]]--;
+        }
         for(int i=0;i<nums.length;i++){
-            while(count[idx] == 0){
-                idx++;
-            }
-            nums[i] = idx;
-            count[idx]--;
+            nums[i] = sortNums[i];
         }
     }
 }
