@@ -7,8 +7,8 @@ import requests
 # --- Config ---
 LEETCODE_USER = os.environ.get("LEETCODE_USER")
 LEETCODE_SESSION = os.environ.get("LEETCODE_SESSION")
-GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN")
-GITHUB_REPO = os.environ.get("GITHUB_REPO")
+GITHUB_TOKEN = os.environ.get("TOKEN")
+GITHUB_REPO = os.environ.get("REPO")
 GITHUB_BRANCH = os.environ.get("GITHUB_BRANCH", "main")
 MAX_FETCH = int(os.environ.get("MAX_FETCH", "100"))
 
@@ -158,3 +158,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
